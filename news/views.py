@@ -12,13 +12,15 @@ from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 #from rssfeed.settings import display_list
-from clips.views import get_videos
+#from clips.views import get_videos
 
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
-display_list = getattr(settings, 'DISPLAY_LIST')
 
 
+def index(request):
+    return render (request, 'base.html' , {})
+"""
 @cache_page(CACHE_TTL)
 def articles_list(request):
 
@@ -43,6 +45,7 @@ def articles_list(request):
 
     context = {'rows' : rows, 'vid':vid}
     return render (request, 'news/articles_list.html' , context)
+"""
 
 @cache_page(CACHE_TTL)
 def feeds_list(request):

@@ -14,7 +14,7 @@ import pickle
 # Create your views here.
 
 
-redis = redis.StrictRedis(host='localhost', port=6379, db=9)
+#redis = redis.StrictRedis(host='localhost', port=6379, db=9)
 
 # facebook api
 cfg = {
@@ -49,7 +49,7 @@ def get_latest_article(sender,  **kwargs):
 #post save signal connect
 post_save.connect(get_latest_article, sender=Article)
 
-@periodic_task(run_every=(crontab( minute="*/15")))
+#@periodic_task(run_every=(crontab( minute="*/15")))
 def post_to_facebook():
     """Post new articles to facebook"""
 
@@ -65,7 +65,7 @@ def post_to_facebook():
                 print("There is a problem ", str(er))
 
 
-@periodic_task(run_every=(crontab(minute="*/7")))
+#@periodic_task(run_every=(crontab(minute="*/7")))
 def feed_update():
     """background task to get update from feed """
     FEED_LIST = Feed.objects.all()
