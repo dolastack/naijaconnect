@@ -14,7 +14,7 @@ import pickle
 # Create your views here.
 
 
-#redis = redis.StrictRedis(host='localhost', port=6379, db=9)
+redis = redis.StrictRedis(host='localhost', port=6379, db='13')
 
 # facebook api
 cfg = {
@@ -40,7 +40,7 @@ api = get_api(cfg)
 
 #periodically get new videos
 def get_latest_article(sender,  **kwargs):
-    #videos = YoutubeVideo.objects.videos_after(minutes=12)
+
     if kwargs['created']:
         article = kwargs['instance']
 

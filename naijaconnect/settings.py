@@ -92,7 +92,7 @@ DATABASES = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/connect',
+        'LOCATION': 'redis://127.0.0.1:6379/12',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient'
         },
@@ -128,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -142,7 +142,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-BROKER_URL = 'redis://localhost:6379/connect1'
+BROKER_URL = 'redis://localhost:6379/14'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'

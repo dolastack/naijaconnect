@@ -17,12 +17,12 @@ from django.conf import settings
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
-
+"""
 def index(request):
     return render (request, 'base.html' , {})
 """
-@cache_page(CACHE_TTL)
-def articles_list(request):
+#@cache_page(CACHE_TTL)
+def index(request):
 
     display_list = Article.objects.articles_after(days=10)
 
@@ -30,22 +30,22 @@ def articles_list(request):
 
     paginator = Paginator(rowsd, 20)
     page = request.GET.get('page')
-    videos = get_videos()
-    video_paginator = Paginator(videos, 10)
+    #videos = get_videos()
+    #video_paginator = Paginator(videos, 10)
     try:
         rows = paginator.page(page)
-        vid = video_paginator.page(page)
+        #vid = video_paginator.page(page)
     except PageNotAnInteger:
         rows = paginator.page(1)
-        vid = video_paginator.page(1)
+        #vid = video_paginator.page(1)
 
     except EmptyPage:
         rows = paginator.page(paginator.num_pages)
-        vid = video_paginator.page(video_paginator.num_pages)
+        #vid = video_paginator.page(video_paginator.num_pages)
 
-    context = {'rows' : rows, 'vid':vid}
+    context = {'rows' : rows}
     return render (request, 'news/articles_list.html' , context)
-"""
+
 
 @cache_page(CACHE_TTL)
 def feeds_list(request):
