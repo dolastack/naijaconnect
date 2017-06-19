@@ -141,7 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
+#STATIC_ROOT='/home/india/django-work/src/naijaconnect/static'
 BROKER_URL = 'redis://localhost:6379/14'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

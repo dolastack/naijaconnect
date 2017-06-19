@@ -10,42 +10,82 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
+
   <body class="bg-success text-white" >
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary fixed-top">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
       <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">News</a>
-        <a class="nav-item nav-link" href="#">About</a>
-
-      </div>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">News</a>
+          <a class="nav-item nav-link" href="#">About</a>
+        </div>
       </div>
       <a class="navbar-brand pull-sm-right m-r-0 hidden-xs-down" href="#">Naija Connection</a>
     </div>
     </nav>
-    <hr />
+
+    <hr class="hidden"/>
     <div class="container">
       <div class="row">   <!-- main rows -->
 
-        <div class="col col-md-3 m-t-3">
-
-          <img class="img-fluid" src="{% static "news/naijamap.png" %}" alt="Nigeria"/>
-          {% block news_content %}
-          {% endblock %}
-
+        <div class="col col-md-3">
+            <img class="img-fluid" src="{% static "news/naijamap.png" %}" alt="Nigeria"/>
+            <div class="container " style="height: 720px; overflow-y:scroll;overflow-x:scroll">
+              {% block news_content %}
+              {% endblock %}
+            </div>
         </div>
         <div class="col col-md-6">
-
-          Hello, world 2!
+          <div class="jumbotron jumbotron-fluid bg-danger text-white">
+            <div class="container">
+              <h5>Exchange Rates</h5>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Official (Buy)</th>
+                    <th>Parallel Market (Buy)</th>
+                    <th>Official (Sell)</th>
+                    <th>Parallel Market (Sell)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Dollar</th>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Pounds</th>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Euro</th>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>300</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+          </div>
         </div>
         <div class="col col-md-3">
-          Hello, world 3!
+          <h3>Exchange Rate</h3>
+
         </div>
       </div>
 
