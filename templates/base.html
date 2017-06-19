@@ -36,13 +36,12 @@
 
         <div class="col col-md-3">
             <img class="img-fluid" src="{% static "news/naijamap.png" %}" alt="Nigeria"/>
-            <div class="container bg-warning" style="height: 720px; overflow-y:scroll;overflow-x:scroll">
               {% block news_content %}
               {% endblock %}
-            </div>
         </div>
+        
         <div class="col col-md-6">
-          <div class="jumbotron jumbotron-fluid bg-danger text-white">
+          <div class="jumbotron jumbotron-fluid bg-danger text-white" >
             <div class="container">
               <h5>Exchange Rates</h5>
               <table class="table table-sm" style="height: 100px;">
@@ -82,11 +81,14 @@
               <p class="lead">Temperature Lag: 40 Abj: 40 PH: 40 Kano: 40 </p>
             </div>
           </div>
+          <div class="card ">
+            <h2 class="card-title bg-success">Gists</h2>
+          </div>
         </div>
         <div class="col col-md-3">
 
             {% include "clips/videos_list.html" %}
-          
+
         </div>
       </div>
 

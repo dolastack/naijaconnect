@@ -26,9 +26,9 @@ def index(request):
 
     display_list = Article.objects.articles_after(days=10)
 
-    rowsd = [display_list[x:x+1] for x in range(0, len(display_list), 1)]
+    #rowsd = [display_list[x:x+1] for x in range(0, len(display_list), 1)]
 
-    paginator = Paginator(rowsd, 20)
+    paginator = Paginator(display_list, 20)
     page = request.GET.get('page')
     videos = get_videos()
     video_paginator = Paginator(videos, 10)

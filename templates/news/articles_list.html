@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block news_content %}
 
+<div class="card bg-warning" style="height: 720px; overflow-y:scroll;overflow-x:scroll">
+<h2 class="card-title btn btn-primary">News</h2>
 
-{% for row in rows %}
-    <div class="col-md-12">
-      {% for entry in row %}
-        <h2>{{entry.title}}</h2>
+
+      {% for entry in rows %}
+        <h3>{{entry.title}}</h3>
         <p>{{ entry.description | safe }}</p>
         <p>
           <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>
         </p>
       {% endfor %}
-    </div>
-{% endfor %}
+
 <div class="pagination">
       <strong> <font size="5">
       <span class="step-links">
@@ -27,5 +27,6 @@
           {% endif %}
       </span>
       </font></strong>
+</div>
 </div>
 {% endblock %}
