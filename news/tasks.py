@@ -8,7 +8,7 @@ from pytz import timezone
 from facebook import GraphAPIError
 from celery.task.schedules import crontab
 from celery.decorators import periodic_task
-
+import json
 import redis
 import pickle
 # Create your views here.
@@ -40,10 +40,8 @@ api = get_api(cfg)
 
 #periodically get new videos
 def get_latest_article(sender,  **kwargs):
-
     if kwargs['created']:
         article = kwargs['instance']
-
         redis.lpush('articles', article.article_id )
 
 #post save signal connect
@@ -55,7 +53,6 @@ def post_to_facebook():
 
     for i in range(5):
         if redis.llen('articles') > 0:
-
             article = Article.objects.get(article_id = redis.lpop('articles'))
 
             attachment = {"name":article.title ,  "link" :article.url , "description": article.description}
