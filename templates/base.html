@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
 
-  <body class="bg-success text-white" >
+  <body class="bg-success" >
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
       <div class="container">
@@ -36,7 +36,7 @@
 
         <div class="col col-md-3">
             <img class="img-fluid" src="{% static "news/naijamap.png" %}" alt="Nigeria"/>
-            <div class="container " style="height: 720px; overflow-y:scroll;overflow-x:scroll">
+            <div class="container bg-warning" style="height: 720px; overflow-y:scroll;overflow-x:scroll">
               {% block news_content %}
               {% endblock %}
             </div>
@@ -84,10 +84,9 @@
           </div>
         </div>
         <div class="col col-md-3">
-          <div class="container " style="height: 720px; overflow-y:scroll;overflow-x:scroll">
-            {% block videos_content %}
-            {% endblock %}
-          </div>
+
+            {% include "clips/videos_list.html" %}
+          
         </div>
       </div>
 
