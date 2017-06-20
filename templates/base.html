@@ -34,16 +34,16 @@
     <div class="container">
       <div class="row">   <!-- main rows -->
 
-        <div class="col col-md-3">
-            <img class="img-fluid" src="{% static "news/naijamap.png" %}" alt="Nigeria"/>
+        <div class="col-md-3" style="background-color: green;">
+
               {% block news_content %}
               {% endblock %}
         </div>
 
-        <div class="col col-md-6">
-          <div class="card bg-danger text-white" >
-            <div class="container">
-              <h5>Exchange Rates</h5>
+        <div class="col-md-6" style="background-color: white;">
+          <div class="card bg-danger text-white w-100" >
+            <div class="card-header bg-danger" style="text-align: center;">Quick Data</div>
+            <h5>Exchange Rates</h5>
               <table class="table table-sm" style="height: 100px;">
                 <thead>
                   <tr>
@@ -79,14 +79,15 @@
                 </tbody>
               </table>
               <p class="lead">Temperature Lag: 40 Abj: 40 PH: 40 Kano: 40 </p>
-            </div>
+
           </div>
+
           <hr />
-          <div class="card btn btn-primary">
-            <h2 class="card-title bg-success">Gists</h2>
+          <div class="card">
+            <div class="card-header bg-success" style="text-align: center;">Gists</div>
           </div>
         </div>
-        <div class="col col-md-3">
+        <div class="col-md-3" style="background-color: green;">
 
             {% include "clips/videos_list.html" %}
 
