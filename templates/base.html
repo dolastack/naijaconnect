@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Naija Connection</title>
+    <title>Naija Today</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,12 +26,12 @@
           <a class="nav-item nav-link" href="#">About</a>
         </div>
       </div>
-      <a class="navbar-brand pull-sm-right m-r-0 hidden-xs-down" href="#">Naija Connection</a>
+      <a class="navbar-brand pull-sm-right m-r-0 hidden-xs-down" href="#">Naija Today</a>
     </div>
     </nav>
 
     <hr class="hidden"/>
-    <div class="container">
+    <div class="container m-t-2">
       <div class="row">   <!-- main rows -->
 
         <div class="col-md-3" style="background-color: green;">
@@ -41,52 +41,31 @@
         </div>
 
         <div class="col-md-6" style="background-color: white;">
-          <div class="card bg-danger text-white w-100" >
-            <div class="card-header bg-danger" style="text-align: center;">Quick Data</div>
-            <h5>Exchange Rates</h5>
-              <table class="table table-sm" style="height: 100px;">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Official (Buy)</th>
-                    <th>Parallel Market (Buy)</th>
-                    <th>Official (Sell)</th>
-                    <th>Parallel Market (Sell)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Dollar</th>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Pounds</th>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Euro</th>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                    <td>300</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="lead">Temperature Lag: 40 Abj: 40 PH: 40 Kano: 40 </p>
+          <div id="carouselExampleControls" class="carousel slide" data-interval="10000" data-ride="carousel">
 
+          <div class="carousel-inner" role="listbox">
+            {% include "finance/exchange_rate.html" %}
+            {% include "finance/commodity_prices.html" %}
+            {% include "agric/agric_products.html" %}
           </div>
 
-          <hr />
-          <div class="card">
-            <div class="card-header bg-success" style="text-align: center;">Gists</div>
-          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
+        <hr />
+          <div class="card ">
+            <h2 class="card-header bg-success" style="text-align: center">Gists</h2>
+          </div>
+
+      </div>
+
+
         <div class="col-md-3" style="background-color: green;">
 
             {% include "clips/videos_list.html" %}

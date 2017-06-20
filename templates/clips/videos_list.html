@@ -2,8 +2,8 @@
 
 {% block videos_content %}
 
-<div class="card w-100" style="background-color: Aquamarine; height: 720px; overflow-y:scroll;overflow-x:scroll">
-  <div class="card-header bg-warning" style="text-align: center;">Clips of the day</div>
+<div class="card bg-warning" style="height: 720px; overflow-y:scroll;overflow-x:scroll">
+  <div class="card-header" style="background-color:DarkGreen;text-align: center;">Clips of the day</div>
       {% for video in vid %}
        <h6>{{ video.title }}</h6>
       <iframe  width="240" height="280" src="{{ video.embed_code }}" frameborder="0"></iframe>
