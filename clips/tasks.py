@@ -31,6 +31,7 @@ def get_api(cfg):
 #get API
 api = get_api(cfg)
 
+"""
 #periodically get new videos
 def get_latest_video(sender,  **kwargs):
     #videos = YoutubeVideo.objects.videos_after(minutes=12)
@@ -42,9 +43,9 @@ def get_latest_video(sender,  **kwargs):
 post_save.connect(get_latest_video, sender=YoutubeVideo)
 
 
-@periodic_task(run_every=(crontab( minute="*/23")))
+#@periodic_task(run_every=(crontab( minute="*/23")))
 def post_video_to_facebook():
-    """Post new articles to facebook"""
+    Post new articles to facebook
     for i in range(1):
         if redis.llen('videos') > 0:
             #get the first element
@@ -56,7 +57,7 @@ def post_video_to_facebook():
                 status = api.put_wall_post(video.title, attachment )
             except facebook.GraphAPIError as er:
                 print("There is a problem ", str(er))
-
+"""
 
 def save_video(feedData, video_feed):
     for entry in feedData.entries:
