@@ -34,8 +34,6 @@
     <div class="container m-t-2"> <!--main container-->
       <div class="row">   <!-- main rows -->
 
-
-
         <div class="col-md-8" style="background-color: white;">
           <div id="carouselExampleControls" class="carousel slide" data-interval="10000" data-ride="carousel">
 
@@ -43,6 +41,16 @@
             {% include "finance/exchange_rate.html" %}
             {% include "finance/commodity_prices.html" %}
             {% include "agric/agric_products.html" %}
+
+            <div class="carousel-item">
+              <div class="card w-100 bg-danger" style="height: 270px;" >
+                <h5 class="card-header bg-danger" style="font-weight: bold;text-align: center">Weather</h5>
+                <h6 style="font-weight: bold;">  Lagos: 35 </h6>
+                <h6 style="font-weight: bold;">  PH: 35</h6>
+                <h6 style="font-weight: bold;">  kano: 35</h6>
+                <h6 style="font-weight: bold;">  Abuja: 35</h6>
+            </div>
+          </div>
           </div>
 
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
