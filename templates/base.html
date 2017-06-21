@@ -14,11 +14,11 @@
   <body class="bg-success" >
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
-      <div class="container">
+
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+      <div class="container">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -55,9 +55,9 @@
           </a>
         </div>
         <hr />
-      
+
           <div class="card ">
-            <h2 class="card-header bg-success" style="text-align: center">Gists</h2>
+            <h2 class="card-header bg-success" style="font-weight: bold; text-align: center">Gists</h2>
           </div>
 
       </div>
@@ -65,7 +65,8 @@
       <div class="col-md-4" style="background-color: green;">
           {% block news_content %}
           {% endblock %}
-            {% include "clips/videos_list.html" %}
+          <hr />
+          {% include "clips/videos_list.html" %}
 
       </div>
 
