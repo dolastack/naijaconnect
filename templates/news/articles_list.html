@@ -4,7 +4,6 @@
 <div class="card bg-warning h-25" style="overflow-y:scroll;overflow-x:scroll">
 <h4 class="card-header bg-success" style="font-weight: bold; text-align: center;">News</h4>
 
-
       {% for entry in rows %}
         <h3>{{entry.title}}</h3>
         <p>{{ entry.description | safe }}</p>
@@ -12,6 +11,7 @@
           <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>
         </p>
       {% endfor %}
+
 
 <div class="pagination">
       <strong> <font size="5">
@@ -27,6 +27,7 @@
           {% endif %}
       </span>
       </font></strong>
-</div>
+</div> 
+
 </div>
 {% endblock %}

@@ -23,14 +23,13 @@ def index(request):
 """
 #@cache_page(CACHE_TTL)
 def index(request):
-
     display_list = Article.objects.articles_after(days=10)
-
     #rowsd = [display_list[x:x+1] for x in range(0, len(display_list), 1)]
-
-    paginator = Paginator(display_list, 20)
-    page = request.GET.get('page')
     videos = get_videos()
+
+    paginator = Paginator(display_list, 15)
+    page = request.GET.get('page')
+
     video_paginator = Paginator(videos, 10)
     try:
         rows = paginator.page(page)
@@ -42,6 +41,7 @@ def index(request):
     except EmptyPage:
         rows = paginator.page(paginator.num_pages)
         vid = video_paginator.page(video_paginator.num_pages)
+
 
     context = {'rows' : rows, 'vid': vid}
     return render (request, 'news/articles_list.html' , context)
